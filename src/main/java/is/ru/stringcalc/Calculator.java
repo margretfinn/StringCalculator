@@ -8,7 +8,11 @@ public class Calculator {
 		}
 		else {
 			if (text.contains(",")){
-				String numbers [] = text.split(","); 
+				String numbers [] = text.split(",");
+				return sum(numbers); 
+			}
+			else if(text.contains("\n")){
+				String numbers[] = text.split("\n"); 
 				return sum(numbers); 
 			}
 			return 1; 
@@ -25,7 +29,6 @@ public class Calculator {
 			total += toInt(number); 
 		}
 		return total;
-
 	}
 
 }
