@@ -10,7 +10,7 @@ public class Calculator {
 		}
 		else {
 			if (text.contains(",") || text.contains("\n")){
-				String numbers [] = text.split(deli);
+				String numbers [] = text.split("[\n ,]");
 				return sum(numbers); 
 			}
 			return 1; 
@@ -31,13 +31,12 @@ public class Calculator {
 			}
 			total += toInt(number); 
 		}
+
 		if(neg.size() > 0){
 			throw new RuntimeException("Negatives not allowed: " + neg); 
 		}
 		return total;
 	}
 
-
-	private static String deli = ("[\n ,]"); 
 
 }
