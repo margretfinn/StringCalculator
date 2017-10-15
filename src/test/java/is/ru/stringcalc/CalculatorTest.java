@@ -34,4 +34,17 @@ public class CalculatorTest {
 	public void testingLinesAndCommas() {
 		assertEquals(6, Calculator.add("1\n2,3")); 
 	}
+
+
+	@Test (expected = RuntimeException.class) 
+	public void testingNegNumbers() {
+		assertEquals("Negatives not allowed: -1", Calculator.add("-1,2"));; 
+	}
+
+
+
+
+
+
+
 } 
