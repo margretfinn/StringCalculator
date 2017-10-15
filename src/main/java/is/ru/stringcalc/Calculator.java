@@ -9,8 +9,11 @@ public class Calculator {
 			return 0; 
 		}
 		else {
-			if (text.contains(",") || text.contains("\n")){
-				String numbers [] = text.split("[\n ,]");
+			if(text.contains("//")){
+				return sum(removingDelim(text)); 
+			}
+			else if (text.contains(",") || text.contains("\n")){
+				String numbers [] = text.split(delim);
 				return sum(numbers); 
 			}
 			return 1; 
@@ -42,5 +45,13 @@ public class Calculator {
 		return total;
 	}
 
+	private static String [] removingDelim(String numbers){
+		int index = numbers.indexOf("//") + 2;
+		delim = delim + "|" + numbers.substring(index,index + 1); 
+		numbers = numbers.substring(index + 2); 
+		return numbers.split(delim); 
+	}
+
+	private static String delim = "\n|," ; 
 
 }
