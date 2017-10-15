@@ -26,10 +26,14 @@ public class Calculator {
 		ArrayList<Integer> neg = new ArrayList<Integer>(); 
 
 		for(String number : numbers) {
-			if(toInt(number) < 0){
+			if (toInt(number) > 1000){
+
+			}
+			else if(toInt(number) < 0){
 				neg.add(toInt(number)); 
 			}
-			total += toInt(number); 
+			else
+				total += toInt(number); 
 		}
 
 		if(neg.size() > 0){
