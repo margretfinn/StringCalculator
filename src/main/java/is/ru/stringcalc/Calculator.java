@@ -13,8 +13,7 @@ public class Calculator {
 				return sum(removingDelim(text)); 
 			}
 			else if (text.contains(",") || text.contains("\n")){
-				String numbers [] = text.split(delim);
-				return sum(numbers); 
+				return sum(splittingNumbers(text)); 
 			}
 			return 1; 
 		}
@@ -43,6 +42,10 @@ public class Calculator {
 			throw new RuntimeException("Negatives not allowed: " + neg); 
 		}
 		return total;
+	}
+
+	private static String[] splittingNumbers (String numbers){
+		return numbers.split(delim);
 	}
 
 	private static String [] removingDelim(String numbers){
